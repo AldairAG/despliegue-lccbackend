@@ -9,11 +9,10 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        // Permitir solicitudes desde tu dominio
         registry.addMapping("/**")
-                .allowedOrigins("http://vps-4676674-x.dattaweb.com") // Tu dominio
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // Métodos permitidos
-                .allowedHeaders("*") // Permitir todos los encabezados
-                .allowCredentials(true); // Si usas cookies o credenciales
+                .allowedOrigins("*") // Permitir todos los orígenes
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
