@@ -50,7 +50,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com/", allowedHeaders = "*")
+@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com", allowedHeaders = "*")
 @RequestMapping("/lcc/user")
 public class UserController {
     @Autowired

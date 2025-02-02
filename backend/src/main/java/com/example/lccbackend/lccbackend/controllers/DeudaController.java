@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com/")
+@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com")
 @RequestMapping("/lcc/deuda")
 public class DeudaController {
     @Autowired
