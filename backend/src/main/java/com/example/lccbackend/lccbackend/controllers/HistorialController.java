@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
    
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com/")
 @RequestMapping("/lcc/hist")
 public class HistorialController {
     @Autowired

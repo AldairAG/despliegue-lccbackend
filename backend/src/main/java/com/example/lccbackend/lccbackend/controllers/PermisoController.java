@@ -20,7 +20,7 @@ import com.example.lccbackend.lccbackend.services.permiso.PermisoService;
 import com.example.lccbackend.lccbackend.services.wallet.WalletService;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com/")
 @RequestMapping("/lcc/permiso")
 public class PermisoController {
     @Autowired

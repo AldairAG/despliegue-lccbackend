@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/lcc/wallet")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com/")
 public class WalletController {
     @Autowired
     private WalletService service;
