@@ -1,0 +1,40 @@
+.item-content{
+    width: 100%;
+    max-width: 1500px;
+    border: 1px solid #cac7c7;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-segment{
+    display: flex;
+    justify-content: space-between;
+
+    h3{
+        color: rgb(6, 6, 116);
+    }
+
+    .item-acotacion{
+        color: #505050;
+        font-size: 16px;
+    }
+    
+    .elemento{
+        color: rgb(97, 97, 244);
+    }
+    .item-date{
+        color: #505050;
+        font-size: 15px;
+    }
+
+    .rojo{
+        color: rgb(214, 111, 111);
+    }
+    .verde{
+        color: green;
+    }
+}
+

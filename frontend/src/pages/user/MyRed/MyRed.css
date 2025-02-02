@@ -1,0 +1,144 @@
+.seccionMyRed {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.seccionRed .divTitulo {
+    display: flex;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seccionRed .divTitulo h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+.nivel{
+    margin-bottom: 30px;
+}
+.nivelCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; 
+    margin-top: 25px;
+}
+
+.nivelCard0-1{
+    padding: 1rem 0.5rem;
+    display: flex;
+    width: 100%;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    background-color: #e9eaeb;
+    align-items: center;
+}
+.nivelCard0-2{
+    width: 100%;
+    margin-top: 2px;
+}
+
+
+.nivelCard1 {
+    display: flex;
+    align-items: center;
+}
+
+.nivelCard-2 {
+    display: flex;
+    background-color: #000000;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+}
+
+.nivelCard-3 {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 30px;
+}
+.nivelCard2{
+    display: flex;
+    flex-direction: column;
+}
+
+.nivelCard-2 span {
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+.seccionMyRed .sp1 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+.seccionMyRed .sp2 {
+    color: #6B7280;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.btnDesTab {
+    display: inline-flex;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color:transparent ;
+}
+
+.seccionMyRed .containTable {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.seccionMyRed table {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.seccionMyRed table thead {
+    background-color: #F3F4F6;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.265);
+
+}
+
+.seccionMyRed table th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.seccionMyRed table tbody {
+    border-top-width: 1px;
+    border-color: #E5E7EB;
+}
+
+.seccionMyRed table td {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #374151;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.265);
+}

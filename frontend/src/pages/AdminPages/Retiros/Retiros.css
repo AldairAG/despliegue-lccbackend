@@ -1,0 +1,247 @@
+.RetiroAdmin {
+    width: 100%;
+    height: auto;
+}
+
+.contenidoRetiros {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        "titulo-read"
+        "contenido-read";
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.titulo-read {
+    grid-area: titulo-read;
+    font-size: 25PX;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: calc(100% - 50px) 50px;
+    grid-template-rows: 100%;
+    grid-template-areas: "sect1-rea sect2-rea";
+}
+
+.titulo-read .sect1-rea{
+    grid-area: sect1-rea;
+}
+.titulo-read .sect2-rea{
+    grid-area: sect2-rea;
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+}
+.titulo-read .sect2-rea:hover{
+    background-color: #e2e2e2;
+}
+.titulo-read .sect2-rea i{
+    font-size: 40px;
+}
+.contenido-read {
+    grid-area: contenido-read;
+}
+
+.card-retiro {
+    border: 1px solid #333;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px;
+    grid-template-areas:
+        "sec1-rea sec4-rea sec2-rea sec3-rea";
+    margin-bottom: 25px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.sec1-rea {
+    grid-area: sec1-rea;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sec1-rea p {
+    font-size: 25px;
+    font-weight: 600;
+    color: #717171;
+}
+
+.sec1-rea span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #595579;
+}
+
+.sec2-rea {
+    grid-area: sec2-rea;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sec2-rea p {
+    font-size: 20px;
+    color: #717171;
+    font-weight: 600;
+}
+
+.sec2-rea span {
+    font-size: 25px;
+    font-weight: 600;
+    color: #473f7e;
+}
+
+.sec3-rea {
+    grid-area: sec3-rea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec3-rea button {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid #717171;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.sec3-rea button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.sec3-rea button:active {
+    transform: translateY(-1px);
+}
+
+.sec4-rea{
+    display: flex;
+    flex-direction: column;
+    grid-area: sec4-rea;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sec4-rea p {
+    font-size: 20px;
+    color: #717171;
+    font-weight: 600;
+}
+.sec4-rea span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #473f7e;
+    margin-inline-end: 10px;
+}
+
+.sec4-rea button {
+    border: none;
+    background-color: transparent;
+    color: #b0b0b0;
+    border-radius: 50px;
+    font-size: 25px;
+}
+.sec4-rea button:hover {
+    background-color: #e8e8e8;
+}
+
+@media(max-width:1000px) {
+    .card-retiro {
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(2, 60px);
+        grid-template-areas:
+            "sec1-rea sec2-rea"
+            "sec3-rea sec4-rea";
+    }
+}
+
+@media(max-width:800px) {
+    .card-retiro {
+        grid-template-columns: 30% 70%;
+        grid-template-rows: repeat(2, 60px);
+        grid-template-areas:
+            "sec1-rea sec2-rea"
+            "sec3-rea sec4-rea";
+    }
+}
+@media(max-width:600px) {
+    .card-retiro {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 60px);
+        grid-template-areas:
+            "sec1-rea" 
+            "sec4-rea"
+            "sec2-rea"
+            "sec3-rea" ;
+    }
+}
+
+@media(max-width:400px) {
+    .RetiroAdmin {
+        width: 350px;
+        height: auto;
+    }
+    .contenidoRetiros {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 70px 300px;
+        grid-template-areas:
+            "titulo-read"
+            "contenido-read";
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .card-retiro {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 60px);
+        grid-template-areas:
+            "sec1-rea"
+            "sec4-rea"
+            "sec2-rea"
+            "sec3-rea";
+    }
+    .sec4-rea span{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:350px) {
+    .RetiroAdmin {
+        width: 300px;
+        height: auto;
+    }
+    .contenidoRetiros {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 70px 300px;
+        grid-template-areas:
+            "titulo-read"
+            "contenido-read";
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .card-retiro {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 60px);
+        grid-template-areas:
+            "sec1-rea"
+            "sec2-rea"
+            "sec3-rea";
+    }
+}

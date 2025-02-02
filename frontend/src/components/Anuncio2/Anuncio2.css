@@ -1,0 +1,68 @@
+.Anuncio2{
+    z-index: 101;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.anuncio2-content{
+    z-index: 101;
+    position: fixed;
+    top:0;
+    width: 320px;
+    height: 400px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 20px 50px 50px 90px 270px 50px;
+    grid-template-areas: 
+    "sec0-anu2"
+    "sec1-anu2"
+    "sec2-anu2"
+    "sec3-anu2"
+    "sec4-anu2"
+    "sec5-anu2";
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+    animation: desplazar 1s ease-in-out;
+    gap: 10px;
+    overflow: hidden;
+}
+
+
+.anuncio-content::-webkit-scrollbar {
+    width: 0px;
+    height: 1px;
+}
+
+.anuncio-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.anuncio-content::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.anuncio-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@keyframes desplazar {
+    0% {
+      transform: translateY(-100%);
+      /* Posición inicial: desplazado hacia arriba */
+    }
+  
+    100% {
+      transform: translateY(0);
+      /* Posición final: no desplazado */
+    }
+  }

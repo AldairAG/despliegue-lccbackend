@@ -1,0 +1,66 @@
+@import url("../../Assets/colors/colors.css");
+
+.seccion-ShowStats {
+    position: relative;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    background-color: var(--primary-color-l);
+    border-radius: 20px;
+    box-shadow: 7px 13px 37px #000000;
+    background-image: url("../../Assets/Images/Baners_jpg/Gold.png");
+}
+
+.seccion-ShowStats .seccion1-c {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.seccion1-c img {
+    width: 35%;
+    content: url("../../Assets/Images/Logos/Logo_3.png");
+}
+.seccion1-c p{
+    width: 100%;
+    text-align: end;
+    justify-self: center;
+    padding: 4%;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+}
+
+.seccion2-c {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+}
+
+.seccion2-c img {
+    width: 15%;
+    content: url("../../Assets/Images/Logos/Logo_1pq.png");
+}
+
+.seccion2-c p {
+    padding-inline-start: 3%;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.seccion3-c {
+    font-size: 2em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: end;
+    justify-content: center;
+    padding-inline: 5%;
+}

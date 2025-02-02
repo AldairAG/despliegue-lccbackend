@@ -1,0 +1,167 @@
+@import url("../../../Assets//colors/colors.css");
+
+.Ecomerce {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 15px;
+    padding-bottom: 50px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.Ecomerce .titulos {
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.Ecomerce header {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: rgb(57, 99, 238);
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    align-items: center;
+    padding-inline: 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    justify-content: space-between;
+}
+
+.Ecomerce header button:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+.Ecomerce .discover {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 600;
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(57, 99, 238), rgb(225, 231, 253));
+}
+
+.Ecomerce .discover span {
+    font-size: 18px;
+}
+
+.Ecomerce .Shopping {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 80px;
+    gap: 20px;
+    max-width: 1300px;
+    align-self: center;
+}
+
+.Ecomerce .Shopping .productos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.Ecomerce .orders {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 80px;
+    gap: 20px;
+    justify-content: center;
+    align-self: center;
+
+}
+
+.Ecomerce .wallet-sec {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 80px;
+    gap: 20px;
+    justify-content: center;
+    align-self: center;
+
+}
+
+
+@media(min-width:1450px) {
+    .Ecomerce .orders {
+        width: 1300px;
+    }
+
+    .Ecomerce .wallet-sec {
+        width: 1300px;
+    }
+}
+
+
+/* .Ecomerce {
+    display: grid;
+    grid-template-rows: 75px 250px auto auto auto;
+}
+
+.sec2-ec{
+    display: grid;
+    margin-inline: 20px;
+    grid-auto-rows: 60px auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.sec2-ec .s21-ec{
+    display: flex;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.sec2-ec .s22-ec{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 20px;
+    justify-self: center;
+    
+}
+
+.sec3-ec {
+    margin-inline: 20px;
+    margin-bottom: 50px;
+}
+
+.sec5-ec {
+    display: grid;
+    margin-inline: 20px;
+    grid-template-rows: 60px auto;
+    margin-bottom: 50px;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.s51-ec {
+    display: flex;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.sec6-ec {
+    margin-inline: 20px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-rows: 60px 100%;
+    justify-content: center;
+}
+.s61-ec {
+    display: flex;
+    font-size: 25px;
+    font-weight: 600;
+} */

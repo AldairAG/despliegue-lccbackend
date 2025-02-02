@@ -1,0 +1,101 @@
+.Wallet-ec {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+}
+
+.Wallet-ec .titulos {
+    font-weight: 600;
+    font-size: 22px;
+    align-items: center;
+}
+
+.Wallet-ec .g {
+    font-size: 0px;
+}
+
+
+.Wallet-ec .wallet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #adadad94;
+    height: 130px;
+}
+
+.Wallet-ec .wallet div {
+    align-items: center;
+    display: flex;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.Wallet-ec .wallet div img {
+    width: 30px;
+    height: 30px;
+    margin-inline-end: 5px;
+}
+
+.Wallet-ec .wallet button {
+    padding: 7px 40px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.Wallet-ec .wallet button:hover {
+    background-color: #ecebeb;
+}
+
+.Wallet-ec .historial {
+    display: flex;
+    height: 200px;
+    overflow: auto;
+}
+
+.Wallet-ec .historial .containTable {
+    overflow-x: auto;
+}
+
+.Wallet-ec .historial table {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.Wallet-ec .historial table thead {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.265);
+}
+
+.Wallet-ec .historial table thead th {
+    color: #697c9b;
+}
+
+.Wallet-ec .historial table th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.Wallet-ec .historial table tbody {
+    border-top-width: 1px;
+    border-color: #E5E7EB;
+}
+
+.Wallet-ec .historial table td {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #374151;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.265);
+}

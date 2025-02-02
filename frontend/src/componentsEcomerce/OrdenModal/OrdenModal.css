@@ -1,0 +1,55 @@
+.Ordenes-ec .orden-modal{
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orden-modalContent{
+    width: 400px;
+    height: 500px;
+    display: flex;
+    background-color: white;
+    z-index: 101;
+    border-radius: 5px;
+}
+
+.sec0-mec{
+    padding-inline: 15px;
+    padding-top: 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #efefef;
+    border-radius: 10px 10px 0 0;
+}
+.sec0-mec div{
+    display: flex;
+    flex-direction: column;
+}
+.sec0-mec p{
+    text-align: start;
+}
+.sec0-mec button{
+    width:25px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+}
+.sec0-mec span{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: start;
+}
+.sec0-mec p{
+    font-size: 17px;
+    color: #6f6f6f;
+}

@@ -1,0 +1,32 @@
+.TextInput{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.TextInput input{
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 0.5px solid #9b9b9b;
+}
+
+.TextInput input:focus {
+    border-color: #0011ff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+.blockTextInput input{
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 5px;
+    color: rgb(117, 117, 117);
+    border: 0.5px solid #9b9b9b;
+}
+
+.blockTextInput input:focus {
+    border-color: #0011ff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
