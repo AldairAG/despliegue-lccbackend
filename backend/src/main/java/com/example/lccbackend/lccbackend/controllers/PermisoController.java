@@ -20,7 +20,7 @@ import com.example.lccbackend.lccbackend.services.permiso.PermisoService;
 import com.example.lccbackend.lccbackend.services.wallet.WalletService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/lcc/permiso")
 public class PermisoController {
     @Autowired
