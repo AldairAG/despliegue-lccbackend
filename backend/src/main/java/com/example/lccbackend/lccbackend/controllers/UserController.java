@@ -42,7 +42,7 @@ import com.example.lccbackend.lccbackend.services.permiso.PermisoService;
 import com.example.lccbackend.lccbackend.services.user.UserService;
 import com.example.lccbackend.lccbackend.services.wallet.WalletService;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -50,7 +50,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com", allowedHeaders = "*")
 @RequestMapping("/lcc/user")
 public class UserController {
     @Autowired

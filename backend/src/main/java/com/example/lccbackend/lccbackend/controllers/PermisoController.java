@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,6 @@ import com.example.lccbackend.lccbackend.services.permiso.PermisoService;
 import com.example.lccbackend.lccbackend.services.wallet.WalletService;
 
 @RestController
-@CrossOrigin(origins = "http://vps-4676674-x.dattaweb.com")
 @RequestMapping("/lcc/permiso")
 public class PermisoController {
     @Autowired

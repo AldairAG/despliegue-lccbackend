@@ -16,6 +16,7 @@ com\example\lccbackend\lccbackend\repositories\HistorialRepository.class
 com\example\lccbackend\lccbackend\repositories\PeticionRepository.class
 com\example\lccbackend\lccbackend\model\entities\Usuario.class
 com\example\lccbackend\lccbackend\repositories\InteresCompuestoRepository.class
+com\example\lccbackend\lccbackend\config\TimerConfig.class
 com\example\lccbackend\lccbackend\constant\PeticionTipos.class
 com\example\lccbackend\lccbackend\repositories\DeudaRepository.class
 com\example\lccbackend\lccbackend\services\peticion\PerticionServiceImpl.class
@@ -26,7 +27,6 @@ com\example\lccbackend\lccbackend\model\DTO\DividendoDiarioDTO.class
 com\example\lccbackend\lccbackend\model\DTO\BonoIgualacionDTO.class
 com\example\lccbackend\lccbackend\model\entities\direccion.class
 com\example\lccbackend\lccbackend\constant\EMAIL_CREDENCIALES.class
-com\example\lccbackend\lccbackend\config\config.class
 com\example\lccbackend\lccbackend\repositories\UserRepository.class
 com\example\lccbackend\lccbackend\controllers\PermisoController.class
 com\example\lccbackend\lccbackend\request\DeudaRequest.class
@@ -72,5 +72,6 @@ com\example\lccbackend\lccbackend\model\DTO\TiDTO.class
 com\example\lccbackend\lccbackend\services\permiso\PermisoService.class
 com\example\lccbackend\lccbackend\repositories\PermisoRepository.class
 com\example\lccbackend\lccbackend\request\migracion\HistorialDTO.class
+com\example\lccbackend\lccbackend\config\CorsConfig.class
 com\example\lccbackend\lccbackend\services\peticion\PeticionService.class
 com\example\lccbackend\lccbackend\helpers\objects\Referido.class
