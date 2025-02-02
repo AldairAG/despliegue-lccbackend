@@ -1,0 +1,175 @@
+.Fp{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    padding: 50px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.form img{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 1px;
+}
+.inputContainer {
+    background-color: rgba(255, 0, 0, 0);
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.fInput {
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid rgb(48, 45, 45);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .1s;
+    position: absolute;
+}
+.fInput:focus {
+    border: 1px rgb(0, 0, 0) solid;
+    outline: none;
+}
+
+.fInput:focus::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.fInput.email {
+    z-index: 1;
+}
+
+.fInput.pass:focus {
+    z-index: 2;
+}
+
+/* .submit {
+    width: 100%;
+    top: 60px;
+    padding: 7px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    position: absolute;
+    background: black;
+    color: white;
+} */
+
+.next {
+    width: 100%;
+    top: 150px;
+    padding: 7px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    position: absolute;
+    background: black;
+    color: white;
+}
+
+.login {
+    width: 100%;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 30px 0;
+    position: absolute;
+    top: 90px;
+    left: 55px
+}
+
+.submit:hover {
+    opacity: .9;
+    transform: scale(1.1);
+}
+
+.Fp .p2{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.fInput2 {
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid rgb(48, 45, 45);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .1s;
+}
+.inputContainer2{
+    background-color: rgba(255, 0, 0, 0);
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+.inputContainer .submit{
+    width: 100%;
+    top: 170px;
+    right: 0;
+    padding: 7px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    position: absolute;
+    background: black;
+    color: white;
+}
+.inputContainer2 .end{
+    width: 100%;
+    top: 170px;
+    right: 0;
+    padding: 7px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    position: absolute;
+    background: black;
+    color: white;
+}
+.inputContainer2 .img2{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -50px;
+    left: 80px;
+}
+.error{
+    color: red;
+}
+.forget {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: 1PX solid rgba(255, 255, 255, 0.151);
+    margin-top: 15px;
+    padding: 7px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    margin-top: 50px;
+}
+
+.forget:hover {
+    background-color: rgba(255, 255, 255, 0.151);
+}

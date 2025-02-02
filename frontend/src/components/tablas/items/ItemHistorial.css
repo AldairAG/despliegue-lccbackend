@@ -1,0 +1,46 @@
+.item-content {
+  width: 100%;
+  height: fit-content;
+  max-width: 1000px;
+  border: 2px solid #cac7c7;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px auto;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-items: center;
+}
+
+.item-column {
+  text-align: center;
+  padding: 5px;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #505050;
+  margin-bottom: 5px;
+}
+
+.item-value {
+  font-size: 16px;
+  color: rgb(6, 6, 116);
+  font-weight: 600;
+  background-color: #e6e6fa;
+  border: 1px solid #cac7c7;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.item-value:hover {
+  background-color: #d4af37; /* Efecto dorado al pasar el cursor */
+  color: #fff;
+}

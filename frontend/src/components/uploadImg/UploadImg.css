@@ -1,0 +1,102 @@
+.UploadImg {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.UploadImg-content {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    position: fixed;
+    z-index: 101;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 50px 300px 50px;
+}
+
+.sec1-upi {
+    background-color: transparent;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-weight: 600;
+    color: #858585;
+    border-bottom: 1px solid #33333341;
+}
+
+.sec1-upi button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: #858585;
+}
+
+.sec1-upi button:hover {
+    color: #5c5c5c;
+}
+
+.sec2-upi {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec2-upi img {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    object-fit: cover;
+    background-color: #5c5c5c;
+    border-radius: 50%;
+}
+
+.sec2-upi button {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 20px;
+    padding: 0 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #33333341;
+    transition: 0.3s;
+}
+
+.sec2-upi button:hover {
+    background-image: url("../../Assets/Images/Baners_jpg/Gold.png");
+    color: white;
+    scale: 1.1;
+}
+
+.sec3-upi {
+    border-top: 1px solid #33333341;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+
+}
+
+.sec3-upi button {
+    border: none;
+    background-color: #eeeeee;
+    padding: 7px 10px;
+    font-size: 17px;
+    border-radius: 3px;
+    color: #848383;
+}
+
+.sec3-upi button:hover {
+    color: #5c5c5c;
+}
+
+@media (max-width: 700px) {
+    .UploadImg-content {
+        width: 300px;
+        height: 400px;
+    }
+}

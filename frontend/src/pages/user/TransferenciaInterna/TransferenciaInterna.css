@@ -1,0 +1,473 @@
+.contenedor-main-ts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.titulo-ts {
+    width: 100%;
+    border-bottom: 1px solid #333;
+    height: 75px;
+}
+
+.contenido-ts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width:1500px ;
+}
+
+.transaccion-area-ts {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 65% 30%;
+    justify-content: space-around;
+    justify-self: center;
+    border-radius: 10px;
+    height: 550px;
+    max-width: 1500px;
+    padding: 15px;
+    margin: 0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.contenido-ts .wallets {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenido-ts .inputArea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .titulo {
+        font-size: 20px;
+        color: #717171;
+        font-weight: 600;
+    }
+}
+
+.contenido-ts .walletOpcion {
+    width: 48%;
+    height: 180px;
+    min-width: 200px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    display: flex;
+    border: 1px solid #c3c3c3;
+    flex-direction: column;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: .4s ease-in-out;
+
+    h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        color: rgb(84, 75, 75);
+        text-wrap: wrap;
+    }
+
+    span {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1;
+        white-space: wrap;
+    }
+
+    div {
+        display: flex;
+    }
+
+    img {
+        line-height: 2rem;
+        width: 30px;
+        height: 30px;
+        justify-self: center;
+        align-self: center;
+        margin-inline-end: 10px;
+    }
+}
+
+.contenido-ts .walletOpcion:hover {
+    transform: scale(1.02);
+    box-shadow: none;
+}
+
+.contenido-ts .seleccionado {
+    border: 3px solid #010a89;
+}
+
+.contenido-ts .notas {
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+        text-align: left;
+    }
+
+    span {
+        text-decoration: none;
+        color: #010a89;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #010a89;
+        font-size: 17px;
+    }
+}
+
+
+.confirmarTransaccionModal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 102;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay{
+        width: 100%;
+        height: 100%;
+        background-color: #000000d1;
+    }
+}
+
+.confirmarTransaccion-contenido{
+    background-color:white ;
+    z-index: 103;
+    width: 300px;
+    height: 500px;
+    padding: 15px;
+    border-radius: 5px;
+
+    header{
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+    
+        button{
+            height: 20px;
+            width: 20px;
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+        }
+        button:hover{
+            background-color: #c3c3c3;
+            border-radius: 7px;
+        }
+    }
+
+    .datosDeTranferencia{
+        margin-top: 20px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+    
+        h5{
+            font-size: 15px;
+            font-weight: bold;
+            color: #767676;
+        }
+        
+        .titulo{
+            font-size: 17px;
+            height: 25px;
+            border-bottom: 1px solid #cfcfcf;
+            span{
+                margin-inline-start: 10px;
+            }
+        }
+    
+        button{
+            width: 100%;
+            margin-top: 30px;
+            padding: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 600;
+            color: #6d6d6d;
+            transition: .4s;
+        }
+    
+        button:hover{
+            scale: 1.05;
+            background-image: url("../../../Assets/Images/Baners_jpg/Gold.png");
+            color: white;
+        }
+    }
+}
+
+
+/* 
+.Retiros .contenido {
+    padding: 15px;
+    margin: 0;
+    height: 550px;
+    max-width: 1500px;
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    justify-self: center;
+    justify-content: space-around;
+    grid-template-columns: 65% 30%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.Retiros .retirar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.retirar .titulo {
+    font-size: 20px;
+    color: #717171;
+    font-weight: 600;
+}
+
+.Retiros .wallets {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 180px;
+}
+
+.Retiros .walletOpcion {
+    width: 48%;
+    height: 180px;
+    min-width: 200px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    display: flex;
+    border: 1px solid #c3c3c3;
+    flex-direction: column;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: .4s ease-in-out;
+}
+
+.Retiros .walletOpcion h3 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: rgb(84, 75, 75);
+    text-wrap: wrap;
+}
+
+.Retiros .walletOpcion span {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    white-space: wrap;
+}
+
+.Retiros .walletOpcion div {
+    display: flex;
+}
+
+.Retiros .walletOpcion:hover {
+    transform: scale(1.02);
+    box-shadow: none;
+}
+
+.Retiros .walletOpcion img {
+    line-height: 2rem;
+    width: 30px;
+    height: 30px;
+    justify-self: center;
+    align-self: center;
+    margin-inline-end: 10px;
+}
+
+.Retiros .seleccionado {
+    border: 3px solid #010a89;
+}
+
+.Retiros .notas {
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Retiros .notas p {
+    text-align: left;
+}
+
+.Retiros .notas span {
+    text-decoration: none;
+    color: #010a89;
+}
+
+.Retiros .notas .link {
+    text-decoration: none;
+    color: #010a89;
+    font-size: 17px;
+}
+
+/////////////////HISTORIAL////////
+
+.Retiros .historial {
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin: 0;
+    padding: 15px;
+    background-color: white;
+    width: 100%;
+    max-width: 1500px;
+    justify-self: center;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.Retiros .historial .titulo {
+    height: 40px;
+    font-size: 16px;
+    border-bottom: 1px solid #c3c3c3;
+    color: #555454;
+}
+
+.Retiros .historial table {
+    text-align: center;
+    width: 100%;
+    table-layout: 0 400px;
+    border-spacing: 0 10px;
+    border-collapse: separate;
+}
+
+.Retiros .historial table tbody {
+    border-color: #E5E7EB;
+}
+
+.Retiros .historial tr {
+    background-color: #f6f6f6;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;  Necesario para los bordes redondeados 
+}
+
+.Retiros .historial tr {
+    padding: 10px; /* Ajusta el espacio dentro de las celdas 
+    border-radius: 12px; /* Borde redondeado 
+    background-color: #f6f6f6; /* Color de fondo de la fila 
+}
+
+.Retiros .historial span{
+    font-weight: 600;
+}
+
+.Retiros .acept span{
+    font-weight: 600;
+    color: green;
+}
+.Retiros .r span{
+    font-weight: 600;
+    color: red;
+}
+.Retiros .historial .e{
+    font-weight: 600;
+    color: orange;
+}
+
+.Retiros .aviso{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #c3c3c3;
+}
+
+.Retiros .historial table td {
+    padding: 1rem 0.75rem;
+    color: #374151;
+    border-top: 1px solid #363636;
+    border-bottom: 1px solid #363636;
+}
+
+
+.Retiros .historial td:not(:first-child):not(:last-child) {
+    border-left: none;
+    border-right: none;
+}
+.Retiros .historial tr td:first-child {
+    border-left: 1px solid #363636;
+}
+
+.Retiros .historial tr td:last-child {
+    border-right: 1px solid #363636;
+}
+
+.Retiros .historial tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+}
+
+.Retiros .historial tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+}
+
+.Retiros .historial tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.Retiros .historial tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.Retiros .historial tr:hover,
+thead:hover {
+    background-color: #e4e8f0;
+}
+
+
+
+
+
+*/
+@media(max-width:910px) {
+    .transaccion-area-ts {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+        height: fit-content;
+    }
+}
+
+@media(max-width:720px) {
+    .contenido-ts .walletOpcion {
+        width: 100%;
+        height: 100px;
+    }
+}
+
+@media(max-width:520px) {
+    .contenido-ts .wallets {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media(max-width:520px) {
+    .confirmarTransaccion-contenido {
+        align-self: baseline;
+    }
+}
+ 

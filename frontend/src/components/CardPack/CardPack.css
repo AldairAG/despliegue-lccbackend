@@ -1,0 +1,57 @@
+.cardpack {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(252, 252, 252, 0.05);
+    transition: .4s ease-in-out;
+}
+
+.cardpack:hover {
+    transform: scale(1.02);
+    border: 3px solid rgb(236, 158, 15);
+    box-shadow: none;
+}
+
+.cardpack .cardpack-s1 {
+    display: flex;
+}
+
+.cardpack .cardpack-s2 {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardpack .pcp1 {
+    color: #374151;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cardpack .pcp2 {
+    color: #1F2937;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-inline-start: 10px;
+}
+
+.cardpack .pcp3 {
+    font-size: 2.25rem;
+    line-height: 1.7rem;
+    font-weight: 700;
+}
+
+.cardpack-s3 {
+    display: flex;
+    align-items: center;
+}
+
+.cardpack-s3 img {
+    width: 30px;
+    height: 30px;
+    margin-inline-end: 10px;
+}

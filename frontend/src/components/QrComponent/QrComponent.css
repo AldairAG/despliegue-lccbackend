@@ -1,0 +1,320 @@
+@import url("../../Assets/colors/colors.css");
+
+.qrPago {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    z-index: 101;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contentQr {
+    display: flex;
+    height: 700px;
+    min-height: 600px;
+    width: 750PX;
+    z-index: 101;
+    padding: 15px;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    overflow: auto;
+}
+
+.modal-contentQr::-webkit-scrollbar {
+    width: 1px;
+}
+
+ .payment {
+    padding: 10px;
+    width: 320px;
+    height: 650px;
+    background-color: whitesmoke;
+    gap: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 102;
+}
+
+.payment img {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.copyAddrs {
+    display: flex;
+    flex-direction: column;
+}
+
+.copyAddrs .wallet {
+    width: 100%;
+    display: flex;
+}
+
+.copyAddrs .wallet input {
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px 0px 10px 10px;
+    border: 0.5px solid #ccc;
+    font-weight: 600;
+}
+
+.copyAddrs .wallet input:focus {
+    border-color: #0011ff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.copyAddrs button {
+    width: 10%;
+    background-color: ghostwhite;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-inline-start: -7PX;
+    padding: 2px;
+    border: 0.5px solid #9b9b9b;
+}
+
+.monto {}
+
+.monto .mount {
+    display: flex;
+    width: 100%;
+}
+
+.monto input {
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px 0px 10px 10px;
+    border: 0.5px solid #ccc;
+    font-weight: 600;
+}
+
+.modal-contentQr select {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon fill="black" points="0,0 20,0 10,10"/></svg>') no-repeat right 10px center;
+    background-color: white;
+    background-size: 10px;
+    border: 0.5px solid #ccc;
+    padding: 10px 40px 10px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-contentQr select option {
+    padding: 10px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-contentQr .finish {
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    background-image: url("../../Assets/Images/Baners_jpg/Gold.png");
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.modal-contentQr .finish:hover {
+    scale: 1.02;
+    cursor: pointer;
+}
+
+.modal-contentQr .close {
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e3e3e3;
+    color: rgb(68, 68, 68);
+    transition: 0.3s;
+}
+
+.modal-contentQr .close:hover {
+    background-color: #c9c9c9;
+    cursor: pointer;
+}
+
+.modal-contentQr .notasqr {
+    padding: 10px;
+    width: 320px;
+    height: 650px;
+    background-color: whitesmoke;
+    gap: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-contentQr .notasqr .nota {
+    display: flex;
+}
+
+.modal-contentQr .notasqr .nota img {}
+
+.modal-contentQr .or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contentQr .or i {
+    color: #9b9b9b;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(49, 49, 49, 0.8);
+
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background-color: #000000;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*///////////////////////////////////////////////////////////SELECTOR*/
+
+.modal-contentQr .selector {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-contentQr .selector .titulo {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+}
+
+.modal-contentQr .selector .titulo img {
+    width: 30px;
+}
+
+.modal-contentQr .selector select {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon fill="black" points="0,0 20,0 10,10"/></svg>') no-repeat right 10px center;
+    background-color: white;
+    background-size: 10px;
+    border: 0.5px solid #ccc;
+    padding: 10px 40px 10px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-contentQr .selector option {
+    padding: 10px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+}
+
+/*///////////////////////RETIOS//////////*/
+
+.modal-contentQr .paymentWallet {
+    background-color: white;
+    border-radius: 5px;
+    width: 300px;
+    height: 600px;
+    padding: 10px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-contentQr .paymentWallet .walletOpcion {
+    border: 1px solid #c4c3c3;
+    height: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+}
+
+.modal-contentQr .paymentWallet .walletOpcion:hover {
+    cursor: pointer;
+    scale: 1.03;
+}
+
+.modal-contentQr .paymentWallet .seleccionado{
+    border: 2px solid rgb(16, 16, 148);
+}
+
+.modal-contentQr .walletOpcion div {
+    height: 100%;
+    display: flex;
+}
+
+.modal-contentQr .walletOpcion img {
+    line-height: 2rem;
+    width: 35px;
+    height: 35px;
+    justify-self: center;
+    align-self: center;
+    margin-inline-end: 10px;
+}
+
+.modal-contentQr .walletOpcion span {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    white-space: nowrap;
+    justify-self: center;
+    align-self: center;
+}
+
+.modal-contentQr .paymentWallet{
+    font-size: 17px;
+    font-weight: 600;
+}

@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   app_lcc:
-    build: lccbackend
+    build: backend
     mem_limit: 512m
     ports:
       - "8080:8080"
@@ -24,8 +22,21 @@ services:
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: db_lcc
     restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # ⬅️ Volumen persistente
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
+
+  frontend:
+    build: frontend
+    ports:
+      - "3000:80"
+    restart: always
+    depends_on:
+      - app_lcc
+
+volumes:
+  pgdata:  # ⬅️ Define el volumen para PostgreSQL
