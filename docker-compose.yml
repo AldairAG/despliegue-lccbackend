@@ -45,6 +45,9 @@ services:
       - app_lcc
     volumes:
       - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    #environment:
+      #- REACT_APP_API_URL=vps-4676674-x.dattaweb.com:8080
+      #- REACT_APP_API_URL=localhost:8080
 
 volumes:
   pgdata:  # ⬅️ Define el volumen para PostgreSQL

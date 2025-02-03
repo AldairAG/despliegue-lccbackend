@@ -385,7 +385,6 @@ public class UserController {
             Wallet wallet = new Wallet();
             Bonos bonos = new Bonos();
             Deuda deuda = new Deuda();
-            InteresCompuesto interesCompuesto = new InteresCompuesto();
 
             usuario.setEmail(newUser.getEmail());
             usuario.setUsername(newUser.getUsername());
@@ -400,8 +399,6 @@ public class UserController {
 
             wallet.setDeuda(deuda);
             deuda.setWallet(wallet);
-
-            interesCompuesto.setWallet(wallet);
 
             service.save(usuario);
             emailService.sendEmailWelcome(newUser.getUsername(), newUser.getPassword(), newUser.getEmail());

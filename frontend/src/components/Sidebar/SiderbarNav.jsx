@@ -94,6 +94,7 @@ const SiderNav = ({ toggleMenu }) => {
 
     const opcionDeuda = () => {
         const permisos = userLogged?.wallet?.permisos||[]
+        if(permisos.length==0) return
         const permiso = permisos.find(item => item.permisoName == 'deuda')
         
         if (permiso && permiso.activo != false) {

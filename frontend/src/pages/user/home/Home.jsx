@@ -8,7 +8,7 @@ import InteresCompuesto from "../../../components/InteresCompuesto/InteresCompue
 import { useUser } from "../../../hooks/useUser.js";
 
 const Home = () => {
-    const { userLogged, loading, tryLogin } = useUser();
+    const { userLogged, loading, tryLogin,changeLoading } = useUser();
 
     useEffect(() => {
             fetchData()
@@ -19,6 +19,7 @@ const Home = () => {
         if (storedUser) {
             //const local=JSON.parse(storedUser)
             await tryLogin()
+            changeLoading(false)
         }
     }
 

@@ -1,13 +1,9 @@
-export const API_BASE={
-    API_USER:"http://vps-4676674-x.dattaweb.com:8080/lcc/user",
-    API_PETICION:"http://vps-4676674-x.dattaweb.com:8080/lcc/peticion",
-    API_PERMISO:"http://vps-4676674-x.dattaweb.com:8080/lcc/permiso",
-    API_HISTORIAL:"http://vps-4676674-x.dattaweb.com:8080/lcc/hist"
-}
+const apiUrl="localhost:8080"
+//const apiUrl="vps-4676674-x.dattaweb.com:8080"
 
-/* export const API_BASE={
-    API_USER:"http://localhost:8080/lcc/user",
-    API_PETICION:"http://localhost:8080/lcc/peticion",
-    API_PERMISO:"http://localhost:8080/lcc/permiso",
-    API_HISTORIAL:"http://localhost:8080/lcc/hist"
-} */
+export const API_BASE={
+    API_USER:`http://${apiUrl}/lcc/user`,
+    API_PETICION:`http://${apiUrl}/lcc/peticion`,
+    API_PERMISO:`http://${apiUrl}/lcc/permiso`,
+    API_HISTORIAL:`http://${apiUrl}/lcc/hist`
+}

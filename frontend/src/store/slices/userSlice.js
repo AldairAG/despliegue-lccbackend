@@ -115,6 +115,7 @@ export const userSlice = createSlice({
             state.cardUser = payload
         },
         changeLoadingSlice: (state, { payload }) => {
+            console.log(payload);
             state.loading = payload
         },
         resetState:(state, { payload })=>{
@@ -132,7 +133,7 @@ export const {
     handleChange,
     loadingLoggedUser,
     loadingCardUser,
-    changeLoading,
+    changeLoadingSlice,
     resetState,
 } = userSlice.actions
 export default userSlice.reducer;

@@ -7,7 +7,7 @@ import {
 } from "../service/userService";
 import { modificarPermiso } from "../service/permisoService";
 import {
-    loadingUsers, loadingSelectUser, handleChange, loadingLoggedUser,resetState
+    loadingUsers, loadingSelectUser, handleChange, loadingLoggedUser,resetState,changeLoadingSlice
 } from "../store/slices/userSlice";
 import { useHistory } from 'react-router-dom';
 import { getDifferences } from '../utils/helpers'
@@ -16,7 +16,7 @@ export const useUser = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { usersList, userSelect, userLogged, userSelectOrignial,
-        cardUser, loginRequest, registerRequest, loading, changeLoadingSlice } = useSelector((state) => state.user)
+        cardUser, loginRequest, registerRequest, loading } = useSelector((state) => state.user)
 
 
     const getAllUsers = async () => {
@@ -59,6 +59,7 @@ export const useUser = () => {
         history.push(to);
     }
     const changeLoading = (value) => {
+        console.log(value);
         dispatch(changeLoadingSlice(value))
 
     }
