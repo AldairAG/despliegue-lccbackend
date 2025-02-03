@@ -1,7 +1,8 @@
 services:
   app_lcc:
     build: backend
-    mem_limit: 512m
+    mem_limit: 1g   # Limita la memoria RAM a 1GB
+    cpus: 1         # Limita el uso a 1 CPU
     ports:
       - "8080:8080"
     environment:
@@ -15,6 +16,8 @@ services:
 
   lcc:
     image: postgres:15
+    mem_limit: 1g   # Limita la memoria RAM a 1GB
+    cpus: 1         # Limita el uso a 1 CPU
     ports:
       - "5432:5432"
     environment:
@@ -25,13 +28,15 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data  # ⬅️ Volumen persistente
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d db_lcc"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   frontend:
     build: frontend
+    mem_limit: 1g   # Limita la memoria RAM a 1GB
+    cpus: 1         # Limita el uso a 1 CPU
     ports:
       - "80:80"
     restart: always

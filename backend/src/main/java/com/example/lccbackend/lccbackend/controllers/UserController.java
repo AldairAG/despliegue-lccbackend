@@ -334,7 +334,6 @@ public class UserController {
 
                 if (auth) {
                     UserDTO userDto = service.getForLogin(loginTry.getCredencial());
-                    System.out.println(userDto.getTwoStepVeref()); 
                     return ResponseEntity.status(HttpStatus.OK).body(userDto);
                 } else {
                     return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);

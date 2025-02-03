@@ -59,7 +59,7 @@ public class EmailService {
     }
 
     public void reintentarEnviosFallidos() {
-        System.out.println("Reintentando envíos fallidos...");
+        //System.out.println("Reintentando envíos fallidos...");
         Iterator<Map<String, Object>> iterator = listaDeReintentos.iterator();
 
         while (iterator.hasNext()) {
