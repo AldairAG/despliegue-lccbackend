@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -389,6 +390,9 @@ public class UserController {
             usuario.setEmail(newUser.getEmail());
             usuario.setUsername(newUser.getUsername());
             usuario.setPassword(newUser.getPassword());
+            usuario.setTelefono(newUser.getLada());
+            usuario.setLada(newUser.getTelefono());
+
             wallet.setReferido(newUser.getReferido());
 
             wallet.setUsuario(usuario);

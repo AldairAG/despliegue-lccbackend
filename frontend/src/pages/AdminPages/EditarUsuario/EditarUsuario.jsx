@@ -8,6 +8,7 @@ import { PERMISOS } from "../../../utils/permisos.js";
 import { changeStateLocal } from "../../../utils/helpers.js";
 import { errorResponse } from '../../../helpers/erroresHelps.js'
 import MensajeAlerta from '../../../components/AlertMsg/MensajeAlerta.jsx'
+import { ROUTES } from "../../../constants/routes.js";
 
 const propiedadesOfUsuario = [
     { label: "Nombre de usuario", key: "username", isNumber: false, nodo: null },
@@ -54,7 +55,7 @@ const propiedadesPermiso = [
 
 const EditarUsuario = () => {
     const { userSelect, getSelectUser, navigateTo, handleChangeState
-        , updateByAdmin, updatePermiso,
+        , updateByAdmin, updatePermiso,deleteUser,
     } = useUser()
     const alertRef = useRef()
 
@@ -109,11 +110,22 @@ const EditarUsuario = () => {
     };
 
     const handleEditar = async () => {
-        await updateByAdmin(userSelect.id_user)
+        const response=await updateByAdmin(userSelect.id_user)
+        if(response?.status &&response?.status==200){
+            alertRef.current.showAlert("Cambios guardados",true)
+        }else{
+            alertRef.current.showAlert("Error desconocido",false)
+        }
     };
 
-    const handleEliminar = () => {
-
+    const handleEliminar = async () => {
+        const response=await deleteUser(userSelect.id_user)
+        if(response?.status &&response?.status==404){
+            navigateTo('/admin/gestionar-ususarios')
+            alertRef.current.showAlert("usuario borrado",true)
+        }else{
+            alertRef.current.showAlert("Error desconocido",false)
+        }
     };
 
     const handleRegresar = () => {

@@ -3,7 +3,7 @@ import { ROUTES, ROUTES_USER } from '../constants/routes'
 import {
     fetchAllUsers, fetchUserForAdmin, updateUser, getCardUserData, fetchUser,
     register, fetchMyNet, ServiceSaveIc,tryNip,updateService,sendEmailService,
-    updateNipService
+    updateNipService,deleteUserService
 } from "../service/userService";
 import { modificarPermiso } from "../service/permisoService";
 import {
@@ -50,7 +50,8 @@ export const useUser = () => {
         //const body = getDifferences(userSelectOrignial, userSelect)
         //console.log(body)
         const body=userSelect
-        await updateUser(id, body)
+        const result =await updateUser(id, body)
+        return result
     }
     const handleChangeState = (name, value, nodo) => {
         dispatch(handleChange({ name, value, nodo }))
@@ -132,6 +133,9 @@ export const useUser = () => {
             return 200
         }else{return 400}
     }
+    const deleteUser=async(id)=>{
+        return await deleteUserService(id)
+    }
 
 
     return {
@@ -159,5 +163,6 @@ export const useUser = () => {
         update,
         sendEmail,
         updateNip,
+        deleteUser,
     };
 }

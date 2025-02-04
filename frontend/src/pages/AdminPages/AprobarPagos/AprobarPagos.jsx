@@ -34,7 +34,7 @@ const AprobarPagos = () => {
         console.log(status);
         
         const error=errorResponse(400)
-        if(status==200){
+        if(status==200 || status==204){
             alertRef.current.showAlert('Operacion realizada con exito',true)
             await fetchData()
         }else{

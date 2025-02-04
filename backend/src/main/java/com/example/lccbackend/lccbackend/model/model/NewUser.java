@@ -5,6 +5,8 @@ public class NewUser {
     private String email;
     private String password;
     private String referido;
+    private String telefono;
+    private String lada;
 
     public String getUsername() {
         return username;
@@ -30,4 +32,17 @@ public class NewUser {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    public String getLada() {
+        return lada;
+    }
+    public void setLada(String lada) {
+        this.lada = lada;
+    }
+    
 }

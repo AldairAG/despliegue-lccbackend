@@ -134,3 +134,12 @@ export const updateNipService = async (id,idUser,newNip) => {
         return error.response
     }
 }
+export const deleteUserService=async(id)=>{
+    try {
+        const response = await usersApi.delete(`${API_BASE.API_USER}/${id}`);
+        return response
+    } catch (error) {
+        console.error(error)
+        return error.response
+    }
+}

@@ -38,7 +38,8 @@ const PagoQr = ({paquete,close}) => {
         const result = await savePeticion(request)
 
         if (result?.status && result?.status == 201) {
-            alertRef.current.showAlert('Invoice created successfully', true)
+            close()
+            alertRef.current.showAlert('Petition created successfully', true)
         } else {
             const error = errorResponse(result?.status || 400)
             alertRef.current.showAlert(error, false)

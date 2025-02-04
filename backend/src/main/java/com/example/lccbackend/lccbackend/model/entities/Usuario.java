@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(
-    name = "usuarios",
+    name = "usuario",
     indexes = @Index(name = "idx_username", columnList = "username")
 )
 public class Usuario {

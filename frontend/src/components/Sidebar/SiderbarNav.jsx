@@ -75,7 +75,7 @@ const opciones = [
 
 ]
 const SiderNav = ({ toggleMenu }) => {
-    const { userLogged,logOut } = useUser();
+    const { userLogged, logOut } = useUser();
 
     const history = useHistory();
 
@@ -93,10 +93,12 @@ const SiderNav = ({ toggleMenu }) => {
     }
 
     const opcionDeuda = () => {
-        const permisos = userLogged?.wallet?.permisos||[]
-        if(permisos.length==0) return
+        const permisos = Array.isArray(userLogged?.wallet?.permisos) ? userLogged.wallet.permisos : [];
+
+        if (permisos.length === 0) return;
+
         const permiso = permisos.find(item => item.permisoName == 'deuda')
-        
+
         if (permiso && permiso.activo != false) {
             return (
                 <>
