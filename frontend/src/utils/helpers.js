@@ -86,3 +86,7 @@ export const getFechaHora = () => {
 
     return { fecha, hora };
 }
+
+export const addToCartHelper=()=>{
+    
+}

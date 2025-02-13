@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from './slices/userSlice'
 import solicitudReducer from './slices/solicitudSlice'
+import ecomerceSlice from './slices/ecomerceSlice'
 
 // Recuperar estado inicial del localStorage
 const persistedState = localStorage.getItem("userState")
@@ -10,7 +11,8 @@ const persistedState = localStorage.getItem("userState")
 export const store = configureStore({
     reducer: {
         user: userReducer,
-        solicitud: solicitudReducer
+        solicitud: solicitudReducer,
+        ecomerce:ecomerceSlice,
     },
     preloadedState: {
         user: persistedState,

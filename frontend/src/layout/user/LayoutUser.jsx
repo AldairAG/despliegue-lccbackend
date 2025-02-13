@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
     Home, Dividendos, Red, MyRed, Ecomerce, Support, UserPerfil, Retiros, Tools, PagarFacturas,
     TransferenciasInternas, DeudaDetails, Packs

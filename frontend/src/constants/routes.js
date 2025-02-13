@@ -5,7 +5,7 @@ export const ROUTES_USER = {
     MY_NET_GEN: "/u/My-net-genealogy",
     MY_NET: "/u/My-net",
     COMING_SOON: "/u/cooming-soon",
-    ECOMERCE: "E-comerce",
+    ECOMERCE: "/u/E-comerce",
     SUPPORT: "/u/Support",
     PROFILE: "/u/Profile",
     WITHDRAWALS: "/u/withdrawals",

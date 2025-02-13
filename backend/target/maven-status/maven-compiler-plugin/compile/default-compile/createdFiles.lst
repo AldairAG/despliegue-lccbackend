@@ -10,11 +10,13 @@ com\example\lccbackend\lccbackend\services\deuda\DeudaServiceImpl.class
 com\example\lccbackend\lccbackend\repositories\WalletRepository.class
 com\example\lccbackend\lccbackend\request\IcRequest.class
 com\example\lccbackend\lccbackend\services\Email\EmailService.class
+com\example\lccbackend\lccbackend\model\ecomerceEntities\HistorialOrdenes.class
 com\example\lccbackend\lccbackend\constant\EstadosRetiros.class
 com\example\lccbackend\lccbackend\model\DTO\LoggedUserDTO.class
 com\example\lccbackend\lccbackend\repositories\HistorialRepository.class
 com\example\lccbackend\lccbackend\repositories\PeticionRepository.class
 com\example\lccbackend\lccbackend\model\entities\Usuario.class
+com\example\lccbackend\lccbackend\model\ecomerceEntities\Orden.class
 com\example\lccbackend\lccbackend\repositories\InteresCompuestoRepository.class
 com\example\lccbackend\lccbackend\config\TimerConfig.class
 com\example\lccbackend\lccbackend\constant\PeticionTipos.class
@@ -27,6 +29,7 @@ com\example\lccbackend\lccbackend\model\DTO\DividendoDiarioDTO.class
 com\example\lccbackend\lccbackend\model\DTO\BonoIgualacionDTO.class
 com\example\lccbackend\lccbackend\model\entities\direccion.class
 com\example\lccbackend\lccbackend\constant\EMAIL_CREDENCIALES.class
+com\example\lccbackend\lccbackend\controllers\OrdenController.class
 com\example\lccbackend\lccbackend\repositories\UserRepository.class
 com\example\lccbackend\lccbackend\controllers\PermisoController.class
 com\example\lccbackend\lccbackend\request\DeudaRequest.class
@@ -37,6 +40,8 @@ com\example\lccbackend\lccbackend\request\NewPeticionRequest.class
 com\example\lccbackend\lccbackend\model\entities\Historial.class
 com\example\lccbackend\lccbackend\services\wallet\WalletService.class
 com\example\lccbackend\lccbackend\services\deuda\DeudaService.class
+com\example\lccbackend\lccbackend\repositories\OrdenRepository.class
+com\example\lccbackend\lccbackend\services\ecomerceService\EcomerceService.class
 com\example\lccbackend\lccbackend\services\user\UserService.class
 com\example\lccbackend\lccbackend\controllers\PeticionController.class
 com\example\lccbackend\lccbackend\model\DTO\RangoResDTO.class
@@ -74,4 +79,5 @@ com\example\lccbackend\lccbackend\repositories\PermisoRepository.class
 com\example\lccbackend\lccbackend\request\migracion\HistorialDTO.class
 com\example\lccbackend\lccbackend\config\CorsConfig.class
 com\example\lccbackend\lccbackend\services\peticion\PeticionService.class
+com\example\lccbackend\lccbackend\services\ecomerceService\EcomerceServiceImpl.class
 com\example\lccbackend\lccbackend\helpers\objects\Referido.class

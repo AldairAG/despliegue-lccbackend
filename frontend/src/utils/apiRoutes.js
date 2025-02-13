@@ -5,5 +5,6 @@ export const API_BASE={
     API_USER:`http://${apiUrl}/lcc/user`,
     API_PETICION:`http://${apiUrl}/lcc/peticion`,
     API_PERMISO:`http://${apiUrl}/lcc/permiso`,
-    API_HISTORIAL:`http://${apiUrl}/lcc/hist`
+    API_HISTORIAL:`http://${apiUrl}/lcc/hist`,
+    API_ECOMERCE:`http://${apiUrl}/lcc/ec`
 }

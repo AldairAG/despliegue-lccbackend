@@ -8,6 +8,7 @@ C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbac
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\DeudaController.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\HistorialController.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\InteresCompuestoController.java
+C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\OrdenController.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\PermisoController.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\PeticionController.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\controllers\UserController.java
@@ -31,6 +32,8 @@ C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbac
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\DTO\TiDTO.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\DTO\UserDTO.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\DTO\UserListDTO.java
+C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\ecomerceEntities\HistorialOrdenes.java
+C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\ecomerceEntities\Orden.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\entities\Bonos.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\entities\Deuda.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\model\entities\direccion.java
@@ -45,6 +48,7 @@ C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbac
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\DeudaRepository.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\HistorialRepository.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\InteresCompuestoRepository.java
+C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\OrdenRepository.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\PermisoRepository.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\PeticionRepository.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\repositories\UserRepository.java
@@ -62,6 +66,8 @@ C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbac
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\request\UserUpdateRequest.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\deuda\DeudaService.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\deuda\DeudaServiceImpl.java
+C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\ecomerceService\EcomerceService.java
+C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\ecomerceService\EcomerceServiceImpl.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\Email\EmailService.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\historial\HistorialService.java
 C:\proyectos\Despliegues\LCC\backend\src\main\java\com\example\lccbackend\lccbackend\services\historial\HistorialServiceImpl.java

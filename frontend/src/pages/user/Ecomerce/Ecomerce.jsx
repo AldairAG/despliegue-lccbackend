@@ -13,102 +13,108 @@ import img6 from "../../../Assets/Images/productos/producto6.png"
 import img7 from "../../../Assets/Images/productos/producto7.png"
 import img8 from "../../../Assets/Images/productos/producto8.png"
 import { useState, useEffect } from "react"
-import Common from "../../../components/js/Common"
+const products = {
+    GoldMilk: {
+        nombre: "Gold milk",
+        desc: "Spice up your day",
+        precio: "35.00",
+        benefits: {
+            b1: "Antioxidant",
+            b2: "Anti-inflammatory",
+            b3: "Anti carcinogenic",
+            b4: "Regulates metabolism"
+        },
+        img:img1
+    },
+    Alkavit: {
+        nombre: "Alkavit",
+        desc: "Alkaline balance",
+        precio: "35.00",
+        benefits: {
+            b1: "Antioxidant",
+            b2: "Strengthens the immune system",
+            b3: "Balances the digestive system",
+            b4: "Control digestive problems"
+        },
+        img:img2
+    },
+    Vita100: {
+        nombre: "Vita 100",
+        desc: "The energy you need",
+        precio: "35.00",
+        benefits: {
+            b1: "Greater concentration",
+            b2: "Physical and mental resistance",
+            b3: "Cardio-protection",
+            b4: "Energy"
+        },
+        img:img3
+    },
+    CleanFiber: {
+        nombre: "Clean fiber",
+        desc: "Incomparable balance",
+        precio: "35.00",
+        benefits: {
+            b1: "Diuretic",
+            b2: "Laxative",
+            b3: "Weight control",
+            b4: "Combat chronic constipation"
+        },
+        img:img4
+    },
+    Kino: {
+        nombre: "Kino",
+        desc: "Great taste",
+        precio: "35.00",
+        benefits: {
+            b1: "Glucose regulator",
+            b2: "Diuretic",
+            b3: "Cardio-protection",
+            b4: "Energy"
+        },
+        img:img5
+    },
+    LemonClean: {
+        nombre: "Lemon clean",
+        desc: "Lemon punch",
+        precio: "35.00",
+        benefits: {
+            b1: "Weight control",
+            b2: "Detoxifier",
+            b3: "Anti-constipation",
+            b4: "Anticancer"
+        },
+        img:img6
+    },
+    FruitRelax: {
+        nombre: "Fruit relax",
+        desc: "Just relax!",
+        precio: "35.00",
+        benefits: {
+            b1: "Antidepressant",
+            b2: "Prevents ADHD",
+            b3: "Anti-stress",
+            b4: "Prevents insomnia"
+        },
+        img:img7
+    },
+    Actigenol: {
+        nombre: "Actigenol",
+        desc: "Renew yourself every day",
+        precio: "35.00",
+        benefits: {
+            b1: "Anti-aging",
+            b2: "Activates the immune system",
+            b3: "Strengthens joints",
+            b4: "Antioxidant"
+        },
+        img:img8
+    }
+};
 
 const Ecomerce = () => {
     const [userData, setUserData] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
-    const userRepo = new Common()
-    const products = {
-        GoldMilk: {
-            nombre: "Gold milk",
-            desc: "Spice up your day",
-            precio: "35.00",
-            benefits: {
-                b1: "Antioxidant",
-                b2: "Anti-inflammatory",
-                b3: "Anti carcinogenic",
-                b4: "Regulates metabolism"
-            }
-        },
-        Alkavit: {
-            nombre: "Alkavit",
-            desc: "Alkaline balance",
-            precio: "35.00",
-            benefits: {
-                b1: "Antioxidant",
-                b2: "Strengthens the immune system",
-                b3: "Balances the digestive system",
-                b4: "Control digestive problems"
-            }
-        },
-        Vita100: {
-            nombre: "Vita 100",
-            desc: "The energy you need",
-            precio: "35.00",
-            benefits: {
-                b1: "Greater concentration",
-                b2: "Physical and mental resistance",
-                b3: "Cardio-protection",
-                b4: "Energy"
-            }
-        },
-        CleanFiber: {
-            nombre: "Clean fiber",
-            desc: "Incomparable balance",
-            precio: "35.00",
-            benefits: {
-                b1: "Diuretic",
-                b2: "Laxative",
-                b3: "Weight control",
-                b4: "Combat chronic constipation"
-            }
-        },
-        Kino: {
-            nombre: "Kino",
-            desc: "Great taste",
-            precio: "35.00",
-            benefits: {
-                b1: "Glucose regulator",
-                b2: "Diuretic",
-                b3: "Cardio-protection",
-                b4: "Energy"
-            }
-        },
-        LemonClean: {
-            nombre: "Lemon clean",
-            desc: "Lemon punch",
-            precio: "35.00",
-            benefits: {
-                b1: "Weight control",
-                b2: "Detoxifier",
-                b3: "Anti-constipation",
-                b4: "Anticancer"
-            }
-        },
-        FruitRelax: {
-            nombre: "Fruit relax",
-            desc: "Just relax!",
-            precio: "35.00",
-            benefits: {
-                b1: "Antidepressant",
-                b2: "Prevents ADHD",
-                b3: "Anti-stress",
-                b4: "Prevents insomnia"
-            }
-        },
-        Actigenol: {
-            nombre: "Actigenol",
-            desc: "Renew yourself every day",
-            precio: "35.00",
-            benefits: {
-                b1: "Anti-aging",
-                b2: "Activates the immune system",
-                b3: "Strengthens joints",
-                b4: "Antioxidant"
-            }
-        }
-    };
+    const [isLoading, setIsLoading] = useState(false)
 
 
     useEffect(() => {
@@ -116,12 +122,7 @@ const Ecomerce = () => {
     }, []);
 
     const fetchUserData = () => {
-        userRepo.fetchUserData().then(user => {
-            if (user) {
-                setUserData(user)
-                setIsLoading(false)
-            }
-        })
+    
     }
 
     return (
