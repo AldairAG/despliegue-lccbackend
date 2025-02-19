@@ -58,6 +58,7 @@ com\example\lccbackend\lccbackend\model\DTO\PagoMensualidadDTO.class
 com\example\lccbackend\lccbackend\controllers\WalletController.class
 com\example\lccbackend\lccbackend\request\LoginRequest.class
 com\example\lccbackend\lccbackend\services\permiso\PermisoServiceImpl.class
+com\example\lccbackend\lccbackend\controllers\BonoController.class
 com\example\lccbackend\lccbackend\request\EmailRequest.class
 com\example\lccbackend\lccbackend\request\NewPermisoRequest.class
 com\example\lccbackend\lccbackend\model\entities\InteresCompuesto.class

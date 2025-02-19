@@ -12,6 +12,7 @@ import EditarUsuario from '../EditarUsuario/EditarUsuario.jsx';
 import Editar from "../../../componentsEcomerce/Editar/Editar.jsx"
 import AdminEc from "../../../componentsEcomerce/Admin/AdminEc.jsx"
 import AprobarPagos from '../AprobarPagos/AprobarPagos.jsx';
+import Bonos from '../bonos/Bonos.jsx';
 
 const Admin = () => {
     const history = useHistory();
@@ -25,6 +26,8 @@ const Admin = () => {
             history.push('/admin');
         } else if (num == 4) {
             history.push('/admin/Ecomerce');
+        } else if (num == 5) {
+            history.push('/admin/bonos');
         }
     }
 
@@ -39,6 +42,7 @@ const Admin = () => {
                 <button onClick={() => handleClick(2)}>Gestionar<br />usuarios</button>
                 <button onClick={() => handleClick(3)}>Aprobar<br />pagos</button>
                 <button onClick={() => handleClick(4)}>Ecomerce</button>
+                <button onClick={() => handleClick(5)}>Bonos</button>
             </div>
             <div className="linkC">
                 <CopyLink username={"Administrador"} />
@@ -51,6 +55,7 @@ const Admin = () => {
                     <Route path="/admin/editar-usuario/:fk?" component={EditarUsuario} />
                     <Route path="/admin/Ecomerce/" component={AdminEc} />
                     <Route path="/admin/editar-orden/:fk?" component={Editar} />
+                    <Route path="/admin/bonos" component={Bonos} />
                     <Route path="/admin" component={AprobarPagos} />
                 </Switch>
             </div>

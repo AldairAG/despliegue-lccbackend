@@ -1,0 +1,16 @@
+.bonos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+
+}
+
+.bonos button{
+    align-self: center;
+    width: 100px;
+    height: 50px;
+}
