@@ -64,7 +64,7 @@ const Retiros = () => {
                                     <div className="sec4-rea">
                                         <p >Wallet address to pay:</p>
                                         <div className="wallet">
-                                            <span id="wallets">{item.usdtAddress}</span>
+                                            <span id="wallets">{item.code}</span>
                                             <button onClick={handleCopy} ><i class="bi bi-copy"></i></button>
                                         </div>
                                     </div>

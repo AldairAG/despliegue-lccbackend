@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.lccbackend.lccbackend.model.DTO.DeudaResponse;
 import com.example.lccbackend.lccbackend.model.entities.Deuda;
 import com.example.lccbackend.lccbackend.repositories.DeudaRepository;
 import com.example.lccbackend.lccbackend.repositories.WalletRepository;
@@ -41,35 +42,26 @@ public class DeudaServiceImpl implements DeudaService {
 
     @Override
     @Transactional
-    public Boolean existDeuda(Deuda deudaObj, Float bono,Long id) {
+    public DeudaResponse existDeuda(Deuda deudaObj, Float bono, Long id) {
 
-        Float newDeuda=0f;
-        Float newBono=0f;
-        Float deuda=deudaObj.getDeuda();
+        Float deuda = deudaObj.getDeuda();
 
-        if (deuda > bono) {
-            newDeuda=deuda-bono;
-            repository.updateDeuda(deudaObj.getDeuda_id(), newDeuda);
-            return true;
-        }
-        if (deuda < bono) {
-            newBono=bono-deuda;
-            repository.updateDeuda(deudaObj.getDeuda_id(), newDeuda);
-            walletRepository.addToWalletCom(id, newBono);
-            return true;
-        }
-        if(deuda==bono){
-            deuda=0f;
-            repository.updateDeuda(deudaObj.getDeuda_id(), newDeuda);
-            return true;
+        // Si no hay deuda, no hay nada que pagar
+        if (deuda == 0) {
+            return new DeudaResponse(false, bono);
         }
 
-        walletRepository.addToWalletCom(id, bono);
-        return false;
+        Float newDeuda = Math.max(0, deuda - bono); // Si el bono es mayor, la deuda se salda a 0
+        Float bonoRestante = Math.max(0, bono - deuda); // Si la deuda es menor, sobra un bono
+
+        repository.updateDeuda(deudaObj.getDeuda_id(), newDeuda);
+
+        return new DeudaResponse(true, bonoRestante);
     }
 
     @Override
-    public void updateDeuda(Long id,Float newDeuda) {
+    @Transactional
+    public void updateDeuda(Long id, Float newDeuda) {
         repository.updateDeuda(id, newDeuda);
     }
 

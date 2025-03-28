@@ -133,7 +133,7 @@ const MyRed = () => {
                                             usersInLevel.map((item) => (
                                                 <tr key={item.userName}>
                                                     <td className="p-4 align-middle">{item.username}</td>
-                                                    <td className="p-4 align-middle">{item.nombres?.trim() || item.apellidos?.trim() ? `${item.nombres ?? ""} ${item.apellidos ?? ""}`.trim(): '" "'}</td>
+                                                    <td className="p-4 align-middle">{item.nombres?.trim() || item.apellidos?.trim() ? `${item.nombres ?? ""} ${item.apellidos ?? ""}`.trim(): ''}</td>
                                                     <td className="p-4 align-middle">{item.fecha_ingreso}</td>
                                                     <td className="p-4 align-middle">{item.referido}</td>
                                                     <td className="p-4 align-middle">{item.staterpack.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(',', '.')}</td>

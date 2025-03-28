@@ -61,7 +61,7 @@ public interface WalletRepository extends CrudRepository<Wallet, Long> {
 
     @Modifying
     @Query("UPDATE Wallet w SET w.wallet_com = w.wallet_com + :monto WHERE w.wallet_id = :id")
-    int addToWalletCom(@Param("id") Long id, @Param("monto") Float monto);
+    void addToWalletCom(@Param("id") Long id, @Param("monto") Float monto);
 
     @Modifying
     @Query("UPDATE Wallet w SET w.wallet_address = :usdtWallet WHERE w.usuario.username = :username")

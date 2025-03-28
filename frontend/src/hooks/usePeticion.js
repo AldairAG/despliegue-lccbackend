@@ -20,6 +20,8 @@ export const usePeticion = () => {
     const fetchPeticionesBytipos = async (tipos) => {
         const result = await fetchSolicitudesByTipos(tipos)
         if (result?.data) {
+            console.log(result.data);
+            
             dispatch(savePagosList(result?.data))
             return
         }

@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +28,6 @@ import com.example.lccbackend.lccbackend.model.DTO.UserDTO;
 import com.example.lccbackend.lccbackend.model.DTO.UserListDTO;
 import com.example.lccbackend.lccbackend.model.entities.Bonos;
 import com.example.lccbackend.lccbackend.model.entities.Deuda;
-import com.example.lccbackend.lccbackend.model.entities.InteresCompuesto;
 import com.example.lccbackend.lccbackend.model.entities.Peticion;
 import com.example.lccbackend.lccbackend.model.entities.Usuario;
 import com.example.lccbackend.lccbackend.model.entities.Wallet;
@@ -42,7 +41,6 @@ import com.example.lccbackend.lccbackend.services.Email.EmailService;
 import com.example.lccbackend.lccbackend.services.permiso.PermisoService;
 import com.example.lccbackend.lccbackend.services.user.UserService;
 import com.example.lccbackend.lccbackend.services.wallet.WalletService;
-
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -405,7 +403,9 @@ public class UserController {
             deuda.setWallet(wallet);
 
             service.save(usuario);
-            emailService.sendEmailWelcome(newUser.getUsername(), newUser.getPassword(), newUser.getEmail());
+            CompletableFuture.runAsync(() -> {
+                emailService.sendEmailWelcome(newUser.getUsername(), newUser.getPassword(), newUser.getEmail());
+            });
             return ResponseEntity.status(HttpStatus.CREATED).body(null);
         } catch (Exception error) {
             System.err.println("error " + error.getMessage());
@@ -499,7 +499,7 @@ public class UserController {
         newWallet.setWallet_com(nuevoSaldo);
 
         walletService.updateWallet(user.getUsername(), newWallet);
-        addRetiroPeticion(user, newPeticion.getMonto(), PeticionTipos.RETIRO_WALLET_COMISION);
+        addRetiroPeticion(user, newPeticion.getMonto(), PeticionTipos.RETIRO_WALLET_COMISION,newWallet.getWallet_address());
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -516,14 +516,15 @@ public class UserController {
 
         newWallet = walletService.updateWallet(user.getUsername(), newWallet);
         user.setWallet(newWallet);
-        addRetiroPeticion(user, newPeticion.getMonto(), PeticionTipos.RETIRO_WALLET_DIVIDENDO);
+        addRetiroPeticion(user, newPeticion.getMonto(), PeticionTipos.RETIRO_WALLET_DIVIDENDO,newWallet.getWallet_address());
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    private void addRetiroPeticion(Usuario user, Float monto, String tipo) {
+    private void addRetiroPeticion(Usuario user, Float monto, String tipo,String code) {
         try {
             Peticion newPeticion = new Peticion();
+            newPeticion.setCode(code);
             newPeticion.setMonto(monto);
             newPeticion.setTipo(tipo);
             newPeticion.setUsuario(user);
@@ -648,11 +649,12 @@ public class UserController {
     }
 
     @PutMapping("/updateNip/{id}/{idUser}")
-    public ResponseEntity<?> updateNip(@PathVariable Long id,@PathVariable Long idUser, @RequestBody Map<String, String> requestBody) {
+    public ResponseEntity<?> updateNip(@PathVariable Long id, @PathVariable Long idUser,
+            @RequestBody Map<String, String> requestBody) {
         try {
             String newNip = requestBody.get("newNip");
             System.out.println(id);
-            walletService.updateNip(id,idUser, newNip);
+            walletService.updateNip(id, idUser, newNip);
             return ResponseEntity.status(HttpStatus.OK).build();
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)

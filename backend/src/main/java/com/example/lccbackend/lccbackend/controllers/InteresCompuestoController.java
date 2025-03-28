@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.lccbackend.lccbackend.helpers.InteresCompuestoHelper;
 import com.example.lccbackend.lccbackend.model.entities.InteresCompuesto;
 import com.example.lccbackend.lccbackend.model.entities.Wallet;
 import com.example.lccbackend.lccbackend.request.IcRequest;
@@ -16,6 +17,8 @@ import com.example.lccbackend.lccbackend.services.wallet.WalletService;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @RestController
 @RequestMapping("/lcc/user")
@@ -24,6 +27,7 @@ public class InteresCompuestoController {
     InteresCompuestoService service;
     @Autowired
     WalletService walletService;
+
 
     @PostMapping("/ic/save")
     public ResponseEntity<?> postMethodName(@RequestBody IcRequest request) {
@@ -63,5 +67,5 @@ public class InteresCompuestoController {
             return ResponseEntity.status(400).body(null);
         }
     }
-
+    
 }

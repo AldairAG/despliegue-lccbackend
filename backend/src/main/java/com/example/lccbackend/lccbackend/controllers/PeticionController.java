@@ -3,6 +3,7 @@ package com.example.lccbackend.lccbackend.controllers;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -123,7 +124,7 @@ public class PeticionController {
         }
 
         // guardar en historial
-        userService.saveHistorial(peticion.getUsuario().getUsername(), tipo, newMonto, null, null, null, null,false);
+        userService.saveHistorial(peticion.getUsuario().getUsername(), tipo, newMonto, null, null, null, null, false);
         // Eliminar peticion
         service.delete(peticion.getPeticion_id());
         return ResponseEntity.status(HttpStatus.OK).body(null);
@@ -136,14 +137,16 @@ public class PeticionController {
     private ResponseEntity<?> aprobarRetiro(Peticion peticion, String tipo) {
         saveHistorialRetiro(peticion.getUsuario().getUsername(), peticion, tipo, EstadosRetiros.APROBADA);
         service.delete(peticion.getPeticion_id());
-        emailService.sendEmailRetiro(peticion.getMonto(), peticion.getUsuario().getUsername());
+        CompletableFuture.runAsync(() -> {
+            emailService.sendEmailRetiro(peticion.getMonto(), peticion.getUsuario().getEmail());
+        });
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 
     private void saveHistorialRetiro(String username, Peticion newPeticion, String tipo, String status) {
         try {
             userService.saveHistorial(username, PeticionTipos.RETIRO, -newPeticion.getMonto(), tipo,
-                    status, null, null,false);
+                    status, null, null, false);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -269,14 +272,14 @@ public class PeticionController {
 
             Optional<Usuario> oB = userService.findByUsername(request.getUsernameBeneficiario());
             if (oB.isPresent()) {
-                Usuario beneficiario = o.get();
+                Usuario beneficiario = oB.get();
 
                 Peticion peticion = new Peticion();
                 peticion.setMonto(request.getMonto());
                 peticion.setTipo(PeticionTipos.PAGO_STARTER_PACK_FACTURA);
-
                 beneficiario.addPeticion(peticion);
                 userService.putUpdate(beneficiario);
+
             }
 
             // agregar elimibar peticion
@@ -285,9 +288,9 @@ public class PeticionController {
             // guardar historial
             userService.saveHistorial(o.get().getUsername(), PeticionTipos.PAGO_FACTURA, -request.getMonto(),
                     request.getWallet(), null,
-                    o.get().getUsername(), oB.get().getUsername(),false);
+                    o.get().getUsername(), oB.get().getUsername(), false);
             userService.saveHistorial(oB.get().getUsername(), PeticionTipos.PAGO_FACTURA, request.getMonto(), null,
-                    null, o.get().getUsername(), oB.get().getUsername(),false);
+                    null, o.get().getUsername(), oB.get().getUsername(), false);
 
             return ResponseEntity.ok().build();
 

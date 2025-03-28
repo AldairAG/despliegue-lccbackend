@@ -122,12 +122,12 @@ const Dividendos = () => {
 
             <div className="bonos-section">
                 <div className="bonos-header">
-                    <h3>Bonos</h3>
+                    <h3>Commisions</h3>
                     <hr />
                 </div>
 
 
-                <div className="sec4-div">
+                <div className="bonos-header">
                     {diccionarioHistorialesBono.map(item => (
                         <HistorialTable historial={historiales[item.key]}
                             fetchHistory={()=>asignarHistorial(item.finder,item.key)}
@@ -144,7 +144,7 @@ const Dividendos = () => {
 
                 <div className="bonos-section">
                     <div className="bonos-header">
-                        <h3>Transferencias</h3>
+                        <h3>Transactions</h3>
                         <hr />
                     </div>
 

@@ -162,7 +162,7 @@ const Retiros = () => {
             {WalletOpcion("Divident wallet", userLogged.wallet.wallet_div, 1)}
             {WalletOpcion("Comission wallet", userLogged.wallet.wallet_com, 2)}
           </div>
-          <TextInput ti={"Wallet address"} value={userLogged.usdtAddress} pl={''} block={false} changeState={() => { }} />
+          <TextInput ti={"Wallet address"} value={userLogged.wallet.wallet_address} pl={''} block={false} changeState={() => { }} />
           <TextInput ti={"Amount to withdraw(USDT)"}
             value={state.monto}
             changeState={changeState}

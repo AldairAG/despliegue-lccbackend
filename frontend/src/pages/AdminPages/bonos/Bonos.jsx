@@ -9,6 +9,7 @@ const rutas =
     cm: "cm",
     brs: "brs",
     dd: "dd",
+    ic: "ic",
 }
 
 
@@ -38,6 +39,7 @@ const Bonos = () => {
             <button onClick={()=>handleEjecutarBono(rutas.cm)}>Cobrar mensualidad</button>
             <button onClick={()=>handleEjecutarBono(rutas.brs)}>Bono rango residual</button>
             <button onClick={()=>handleEjecutarBono(rutas.dd)}>Dividendo diario</button>
+            <button onClick={()=>handleEjecutarBono(rutas.ic)}>Ejecutar interes compuesto</button>
         </div>
     )
 }

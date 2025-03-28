@@ -23,10 +23,12 @@ const InteresCompuesto = () => {
     useEffect(() => {
         if (userLogged?.wallet?.interesCompuesto) {
             const ic = userLogged?.wallet?.interesCompuesto.find(permiso => permiso.tipo == 'div')
-            if (ic) {
-                if(ic.isActivo)
-                changeStateLocal(setState, 'isActivo', true)
+            console.log(ic);
             
+            if (ic) {
+                if(ic?.activo)
+                changeStateLocal(setState, 'isActivo', true)
+
                 changeStateLocal(setState, 'acumulado', ic.acumulado)
                 changeStateLocal(setState, 'fin', ic.fecha_fin)
             }
@@ -100,7 +102,7 @@ const InteresCompuesto = () => {
                         onClick={() => changeStateLocal(setState, 'calcularModal', !state.calcularModal)}>Calculate</button>
                     <button disabled={state.isActivo}
                         onClick={() => changeStateLocal(setState, 'activarModal', !state.activarModal)}>
-                        <i class="bi bi-power"></i> Activate</button>
+                        <i class="bi bi-power" ></i> Activate</button>
                 </div>
             </div>
         </section>

@@ -3,6 +3,7 @@ package com.example.lccbackend.lccbackend.helpers;
 import com.example.lccbackend.lccbackend.constant.Permisos;
 import com.example.lccbackend.lccbackend.constant.PeticionTipos;
 import com.example.lccbackend.lccbackend.model.DTO.BonoIgualacionDTO;
+import com.example.lccbackend.lccbackend.model.DTO.DeudaResponse;
 import com.example.lccbackend.lccbackend.model.DTO.DividendoDiarioDTO;
 import com.example.lccbackend.lccbackend.model.DTO.MyNetDTO;
 import com.example.lccbackend.lccbackend.model.DTO.RangoResDTO;
@@ -74,16 +75,19 @@ public class BonosHelper {
             return;
 
         while (stUpdate != st) {
-            acumunlado += bonoRD[stUpdate];
+            Deuda deuda = deudaService.getDeudaByWalletId(walletPatrocinador.getDeuda().getDeuda_id()).get();
+            DeudaResponse deudaResponse = deudaService.existDeuda(deuda, (float) bonoRD[stUpdate],
+                    walletPatrocinador.getWallet_id());
+
+            acumunlado += deudaResponse.getExcedente();
             // guardar en historial//
-            Deuda deuda=deudaService.getDeudaByWalletId(walletPatrocinador.getDeuda().getDeuda_id()).get();
-            Boolean abono = deudaService.existDeuda(deuda, (float) bonoRD[stUpdate],walletPatrocinador.getWallet_id());
             service.saveHistorial(username, PeticionTipos.BONO_REFERENCIA_DIRECTA, (float) bonoRD[stUpdate], null, null,
-            walletUserRef.getUsuario().getUsername(),null, abono);
+                    walletUserRef.getUsuario().getUsername(), null, deudaResponse.getAbono());
 
             stUpdate++;
         }
 
+        walletPatrocinador.setWallet_com(walletPatrocinador.getWallet_com() + acumunlado);
         walletPatrocinador.setGanancia_total(walletPatrocinador.getGanancia_total() + acumunlado);
         walletPatrocinador.getBonos().setRef_direct(walletPatrocinador.getBonos().getRef_direct() + acumunlado);
         walletService.updateWallet(username, walletPatrocinador);
@@ -176,11 +180,12 @@ public class BonosHelper {
         if (tipo.equals("silver")) {
             wallet.getBonos().setContador_ft_silver(nuevoContador);
         }
-        Boolean abono = deudaService.existDeuda(wallet.getDeuda(), bono, wallet.getWallet_id());
+        DeudaResponse deudaResponse = deudaService.existDeuda(wallet.getDeuda(), bono, wallet.getWallet_id());
 
         service.saveHistorial(wallet.getUsuario().getUsername(), PeticionTipos.BONO_FAST_TRACK, 500f, tipo,
-                null, null, null, abono);
+                null, null, null, deudaResponse.getAbono());
 
+        wallet.setWallet_com(wallet.getWallet_com() + deudaResponse.getExcedente());
         wallet.getBonos().setFast_track(wallet.getBonos().getFast_track() + bono);
         walletService.updateWallet(wallet.getUsuario().getUsername(), wallet);
     }
@@ -218,8 +223,10 @@ public class BonosHelper {
             Wallet wallet = walletService.findWalletByUsername(usuario.getUsername());
             int bono = calcularBonoRangoResidual(usuario.getRango());
 
-            Boolean abono = deudaService.existDeuda(wallet.getDeuda(), (float) bono, wallet.getWallet_id());
+            DeudaResponse deudaResponse = deudaService.existDeuda(wallet.getDeuda(), (float) bono,
+                    wallet.getWallet_id());
 
+            wallet.setWallet_com(wallet.getWallet_com() + deudaResponse.getExcedente());
             wallet.setGanancia_total(wallet.getGanancia_total() + bono);
             wallet.getBonos().setRango_res(wallet.getBonos().getRango_res() + bono);
 
@@ -228,13 +235,16 @@ public class BonosHelper {
 
             // guardar en historial
             service.saveHistorial(usuario.getUsername(), PeticionTipos.BONO_RANGO_RESIDUAL, (float) bono, null,
-                    null, null, null, abono);
+                    null, null, null, deudaResponse.getAbono());
         }
     }
 
     public void asignarBonoRangoResidual(String username) {
         // posible optimizacion obteniedno solo lo necesario con DTO
         Wallet wallet = walletService.findWalletByUsername(username);
+
+        if (wallet == null)
+            return;
 
         Float limite = (float) (capitalNecesario[wallet.getRango()] / 2);
         Float capitalTeam = 0f;
@@ -325,7 +335,8 @@ public class BonosHelper {
                 System.out.println("name: " + user.getUsername());
                 System.out.println("ganado: " + wallet.getBonos().getDividendo_diario());
 
-                service.saveHistorial(user.getUsername(), PeticionTipos.DIVIDENDO_DIARIO, bono, null, null, null, null,false);
+                service.saveHistorial(user.getUsername(), PeticionTipos.DIVIDENDO_DIARIO, bono, null, null, null, null,
+                        false);
             });
         } catch (Exception e) {
             System.out.println(e);
@@ -333,7 +344,7 @@ public class BonosHelper {
     }
 
     // BONO DE IGUALACION//optimizable quitando el dto y cambiando por username
-    public void bonoIgualacion() {
+    public void bonoIgualacion() { 
         try {
             List<BonoIgualacionDTO> DTOs = walletService.findDataForBonoIgualacion();
 
@@ -347,6 +358,16 @@ public class BonosHelper {
                 System.out.println("suma total:" + sumaTotal);
 
                 BonoIgualacionDTO dto = DTOs.stream().filter(d -> d.getUsername().equals(username)).findFirst().get();
+
+                DeudaResponse deudaResponse = deudaService.existDeuda(wallet.getDeuda(), (float) sumaTotal,
+                        wallet.getWallet_id());
+                
+                if(deudaResponse.getAbono()){
+                    service.saveHistorial(wallet.getUsuario().getUsername(), PeticionTipos.BONO_MATCHING, deudaResponse.getExcedente(),
+                                null, null,null, null, false);
+                }
+
+                wallet.setWallet_com(wallet.getWallet_com() + deudaResponse.getExcedente());
 
                 wallet.getBonos().setMatching(dto.getMatching() + sumaTotal);
                 wallet.setGanancia_total(dto.getGanancia_total() + sumaTotal);
@@ -374,12 +395,10 @@ public class BonosHelper {
                     System.out.println(referido + " LV." + nivel + " bono: " + bono);
 
                     if (bono != 0) {
-                        Boolean abono = deudaService.existDeuda(wallet.getDeuda(), (float) bono,
-                                wallet.getWallet_id());
 
                         service.saveHistorial(wallet.getUsuario().getUsername(), PeticionTipos.BONO_MATCHING, bono,
                                 null, null,
-                                username + " LV." + nivel, null, abono);
+                                referido + " LV." + nivel, null, false);
                     }
 
                     return bono + bonoSiguiente;
@@ -430,7 +449,9 @@ public class BonosHelper {
 
         Float bono = 25 * multiplicadorasDeBono[nivel - 1];
 
-        Boolean abono = deudaService.existDeuda(wallet.getDeuda(), (float) bono,wallet.getWallet_id());
+        DeudaResponse deudaResponse = deudaService.existDeuda(wallet.getDeuda(), (float) bono, wallet.getWallet_id());
+
+        wallet.setWallet_com(wallet.getWallet_com() + deudaResponse.getExcedente());
         wallet.getBonos().setMembresia_mensual(wallet.getBonos().getMembresia_mensual() + bono);
         wallet.setGanancia_total(wallet.getGanancia_total() + bono);
 
@@ -438,7 +459,7 @@ public class BonosHelper {
         System.out.println(username + " bono: " + bono);
 
         service.saveHistorial(username, PeticionTipos.BONO_PAGO_MANTENIMIENTO, bono, null, propietario + " LV." + nivel,
-                null, null,abono);
+                null, null, deudaResponse.getAbono());
         bonoMensualidad(wallet.getReferido(), nivel + 1, propietario);
 
     }
