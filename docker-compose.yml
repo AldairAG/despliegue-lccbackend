@@ -15,7 +15,7 @@ services:
         condition: service_healthy
 
   lcc:
-    image: postgres:15
+    image: postgres:15-alpine
     mem_limit: 1g   # Limita la memoria RAM a 1GB
     cpus: 1         # Limita el uso a 1 CPU
     ports:
@@ -28,7 +28,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data  # ⬅️ Volumen persistente
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d db_lcc|| exit 1"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d db_lcc || exit 1"]
       interval: 10s
       timeout: 10s
       retries: 10
